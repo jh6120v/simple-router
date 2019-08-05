@@ -1,0 +1,30 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "browsers": [
+            "ie >= 11",
+            "Edge >= 17",
+            "Firefox >= 63",
+            "Chrome >= 70",
+            "Safari >= 12",
+            "ios >= 10",
+            "ChromeAndroid >= 70"
+          ]
+        }
+      }
+    ]
+  ],
+  "plugins": [
+    [
+      "@babel/plugin-proposal-class-properties",
+      {
+        "loose": true
+      }
+    ],
+    "@babel/plugin-transform-classes",
+    "@babel/plugin-syntax-dynamic-import"
+  ]
+}
