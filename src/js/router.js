@@ -14,10 +14,7 @@ class Router {
 
         // 自定義一個當 pushState 或 popState 之後，處理事件的函數
         const onpushstate = (e) => {
-            const path = getUrlFragment(e.state);
-            if (self.routes.has(path)) {
-                self.execute(path);
-            }
+            self.execute(getUrlFragment(e.state));
         };
 
         // 使用立即函示來取代原本 history.pushState 的行為
@@ -39,15 +36,15 @@ class Router {
         window.onpopstate = onpushstate;
 
         // 執行第一次
-        const path = getUrlFragment();
-        self.execute(path);
+        self.execute(getUrlFragment);
 
         return self;
     }
 
     execute(path) {
-        const handler = this.routes.get(path);
-        handler(path);
+        if (this.routes.has(path)) {
+            this.routes.get(path)(path);
+        }
     }
 }
 
