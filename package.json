@@ -4,7 +4,8 @@
   "description": "simple router",
   "main": "app.js",
   "scripts": {
-    "dev": "webpack-dev-server --devtool eval --progress --colors --hot --content-base build --historyApiFallback --config webpack.config.js"
+    "dev": "webpack-dev-server --devtool eval --progress --colors --hot --content-base build --historyApiFallback --mode=development",
+    "prod": "webpack --mode=production"
   },
   "keywords": [],
   "author": "",

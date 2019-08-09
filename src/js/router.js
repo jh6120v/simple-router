@@ -36,7 +36,7 @@ class Router {
         window.onpopstate = onpushstate;
 
         // 執行第一次
-        self.execute(getUrlFragment);
+        self.execute(getUrlFragment());
 
         return self;
     }
