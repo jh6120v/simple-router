@@ -8,7 +8,7 @@ module.exports = {
         b: path.join(__dirname, 'src', 'app')
     },
     output: {
-        path: `${__dirname}/public`,
+        path: `${__dirname}/dist`,
         filename: 'assets/js/bundle.[hash].js',
         publicPath: '/'
     },
@@ -26,7 +26,7 @@ module.exports = {
     plugins: [
         new webpack.optimize.ModuleConcatenationPlugin(),
         new CleanWebpackPlugin([
-            `${__dirname}/public/assets/js/*.js`
+            `${__dirname}/dist/assets/js/*.js`
         ], {
             allowExternal: true
         }),
@@ -56,6 +56,9 @@ module.exports = {
                 }
             }
         }
+    },
+    performance: {
+        hints: false
     },
     // devServer 則是 webpack-dev-server 設定
     devServer: {
