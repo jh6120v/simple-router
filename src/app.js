@@ -4,16 +4,6 @@ const router = new Router([
     {
         path: '/',
         handler(path) {
-            console.log(`'${path}':: index page.`);
-
-            setTimeout(() => {
-                navigate('/simple-router');
-            }, 0);
-        }
-    },
-    {
-        path: '/simple-router',
-        handler(path) {
             console.log(`'${path}':: main page.`);
 
             const aTag = document.createElement('a');
@@ -22,7 +12,7 @@ const router = new Router([
             aTag.addEventListener('click', (e) => {
                 e.preventDefault();
 
-                navigate('/simple-router/hello-world');
+                navigate('/hello-world');
             });
 
             const app = document.getElementById('app');
@@ -39,7 +29,7 @@ const router = new Router([
         }
     },
     {
-        path: '/simple-router/hello-world',
+        path: '/hello-world',
         handler(path) {
             console.log(`'${path}':: hello world page.`);
 
