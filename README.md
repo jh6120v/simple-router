@@ -17,4 +17,4 @@ npm run prod
 ```
 
 # Demo
-https://jh6120v.github.io/simple-router/
+https://simple-router.dailyofjames.com/
