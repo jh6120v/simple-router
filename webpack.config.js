@@ -8,7 +8,7 @@ module.exports = {
         b: path.join(__dirname, 'src', 'app')
     },
     output: {
-        path: `${__dirname}/dist`,
+        path: `${__dirname}/public`,
         filename: 'assets/js/bundle.[hash].js',
         publicPath: '/'
     },
@@ -26,7 +26,7 @@ module.exports = {
     plugins: [
         new webpack.optimize.ModuleConcatenationPlugin(),
         new CleanWebpackPlugin([
-            `${__dirname}/dist/assets/js/*.js`
+            `${__dirname}/public/assets/js/*.js`
         ], {
             allowExternal: true
         }),
