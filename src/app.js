@@ -4,14 +4,25 @@ const router = new Router([
     {
         path: '/',
         handler(path) {
-            console.log(`'${path}':: default page.`);
+            console.log(`'${path}':: index page.`);
+
+            setTimeout(() => {
+                navigate('/simple-router');
+            }, 0);
+        }
+    },
+    {
+        path: '/simple-router',
+        handler(path) {
+            console.log(`'${path}':: main page.`);
 
             const aTag = document.createElement('a');
-            aTag.innerText = 'navigate to hello world';
+            aTag.innerText = 'navigate to hello world page.';
+            aTag.className = 'title';
             aTag.addEventListener('click', (e) => {
                 e.preventDefault();
 
-                navigate('/hello-world');
+                navigate('/simple-router/hello-world');
             });
 
             const app = document.getElementById('app');
@@ -19,16 +30,22 @@ const router = new Router([
                 app.removeChild(app.firstChild);
             }
 
+            const header = document.createElement('h1');
+            header.innerText = '<> Simple Router </>';
+            header.className = 'header';
+
+            app.appendChild(header);
             app.appendChild(aTag);
         }
     },
     {
-        path: '/hello-world',
+        path: '/simple-router/hello-world',
         handler(path) {
-            console.log(`'${path}':: hello world.`);
+            console.log(`'${path}':: hello world page.`);
 
             const aTag = document.createElement('a');
-            aTag.innerText = 'navigate to default page';
+            aTag.innerText = 'navigate to index page.';
+            aTag.className = 'title';
             aTag.addEventListener('click', (e) => {
                 e.preventDefault();
 
@@ -40,6 +57,11 @@ const router = new Router([
                 app.removeChild(app.firstChild);
             }
 
+            const header = document.createElement('h1');
+            header.innerText = '<> Simple Router </>';
+            header.className = 'header';
+
+            app.appendChild(header);
             app.appendChild(aTag);
         }
     }
