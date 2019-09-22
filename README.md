@@ -1,3 +1,5 @@
+![image](https://github.com/jh6120v/simple-router/blob/master/cover.png)
+
 # simple-router
 a simple native javascript router
 
