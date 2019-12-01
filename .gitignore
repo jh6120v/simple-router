@@ -2,3 +2,10 @@
 .DS_Store
 node_modules
 .sass-cache
+coverage
+stats.json
+functions
+.firebaserc
+database.rules.json
+firebase.json
+.firebase
