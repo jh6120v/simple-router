@@ -20,4 +20,3 @@ npm run prod
 
 # Demo
 - https://simple-router-77683.firebaseapp.com
-- https://simple-router.dailyofjames.com/
